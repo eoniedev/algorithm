@@ -25,16 +25,16 @@ int bfs() {
         int x, y, t;
         tie(x, y, t) = q.front();
         q.pop();
-        if(t >= Min){
+        if(Lab[x][y] == 0){
+            cnt++;
+        }
+        if(t > Min){
             break;
         }
-        if(Lab[x][y] == 0){
-            if(++cnt == Room) {
-                time = t;
-                break;
-            }
+        if(cnt == Room) {
+            time = t;
+            break;
         }
-        
         for(int i=0; i<4; i++){
             int a = x + deltas[i][0];
             int b = y + deltas[i][1];
